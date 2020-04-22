@@ -11,24 +11,27 @@ import java.util.Scanner;
 
 public class Arayuz implements IArayuzSubject , IObserver {
     Scanner input = new Scanner(System.in);
-
+    //3 deneme hakki olan kullanici girisi
     @Override
     public boolean kullaniciGiris() {
-        System.out.println("---ARAYUZ---");
-        IKullaniciVeriTabaniServisi kulllanici = KullaniciPostgreSQLSurucusu.Nesne();
-        String kullaniciAdi = "";
-        String parola = "";
-        System.out.println("----İslem yapabilmek icin bilgilerinizi girin----");
-        System.out.println("Kullanıcı Adı: ");
-        kullaniciAdi = input.next();
-        System.out.println("Parola: ");
-        parola = input.next();
-        boolean sonuc = kulllanici.kullaniciDogrulama(kullaniciAdi, parola);
-        if (sonuc) {
-            return true;
-        } else {
-            return false;
-        }
+        int hak = 0;
+        do{
+            hak++;
+            System.out.println("---ARAYUZ---");
+            IKullaniciVeriTabaniServisi kulllanici = KullaniciPostgreSQLSurucusu.Nesne();
+            String kullaniciAdi = "";
+            String parola = "";
+            System.out.println("----İslem yapabilmek icin bilgilerinizi girin----");
+            System.out.println("Kullanıcı Adı: ");
+            kullaniciAdi = input.next();
+            System.out.println("Parola: ");
+            parola = input.next();
+            boolean sonuc = kulllanici.kullaniciDogrulama(kullaniciAdi, parola);
+            if (sonuc) {
+                return true;
+            }
+        }while(hak!=3);
+        return false;
     }
 
     @Override

@@ -27,13 +27,10 @@ public class KullaniciPostgreSQLSurucusu implements IKullaniciVeriTabaniServisi 
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/akilli_cihaz", "postgres", "159852arife");
             if (conn != null) {
-                System.out.println("----PostgreSQL Veritabaniyla Baglanti Saglandi----");
-
                 String KullaniciSql = "SELECT * FROM public.\"Kullanici\"";
                 Statement stmt = conn.createStatement();
                 ResultSet result = stmt.executeQuery(KullaniciSql);
                 conn.close();
-
                 String _kullaniciAdi = "";
                 String _parola = "";
                 while (result.next()) {
