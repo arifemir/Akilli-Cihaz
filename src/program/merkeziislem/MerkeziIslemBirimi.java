@@ -1,14 +1,14 @@
 package program.merkeziislem;
 
 import program.arayuz.Arayuz;
-import program.arayuz.IArayuzSubject;
+import program.arayuz.IArayuz;
 import program.isbirimleri.Eyleyici;
 import program.isbirimleri.IEyleyici;
 import program.isbirimleri.ISicaklikAlgilayici;
 import program.isbirimleri.SicaklikAlgilayici;
 
 public class MerkeziIslemBirimi implements IMerkeziIslemBirimi {
-    IArayuzSubject arayuz = new Arayuz();
+    IArayuz arayuz = new Arayuz();
     ISicaklikAlgilayici sicaklikAlgilayici = new SicaklikAlgilayici();
     IEyleyici eyleyici = new Eyleyici();
     @Override

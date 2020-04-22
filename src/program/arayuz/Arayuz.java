@@ -9,7 +9,7 @@ import veritabani.postgreSQL.KullaniciPostgreSQLSurucusu;
 
 import java.util.Scanner;
 
-public class Arayuz implements IArayuzSubject , IObserver {
+public class Arayuz implements IArayuz, IObserver {
     Scanner input = new Scanner(System.in);
     //3 deneme hakki olan kullanici girisi
     @Override

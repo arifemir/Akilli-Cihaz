@@ -4,7 +4,7 @@ import program.isbirimleri.IEyleyici;
 import program.isbirimleri.ISicaklikAlgilayici;
 
 //observer
-public interface IArayuzSubject {
+public interface IArayuz {
     public boolean kullaniciGiris();
     public int islemSecimi();
     public void sicaklik(ISicaklikAlgilayici sicaklikAlgilayici);
