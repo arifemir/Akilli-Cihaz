@@ -1,6 +1,6 @@
 package program.isbirimleri;
 
-public interface IEyleyiciObserver {
+public interface IEyleyici {
     public void sogutucuAc();
     public void sogutucuKapat();
 }

@@ -3,14 +3,14 @@ package program.merkeziislem;
 import program.arayuz.Arayuz;
 import program.arayuz.IArayuzSubject;
 import program.isbirimleri.Eyleyici;
-import program.isbirimleri.IEyleyiciObserver;
-import program.isbirimleri.ISicaklikAlgilayiciObserver;
+import program.isbirimleri.IEyleyici;
+import program.isbirimleri.ISicaklikAlgilayici;
 import program.isbirimleri.SicaklikAlgilayici;
 
 public class MerkeziIslemBirimi implements IMerkeziIslemBirimi {
     IArayuzSubject arayuz = new Arayuz();
-    ISicaklikAlgilayiciObserver sicaklikAlgilayici = new SicaklikAlgilayici();
-    IEyleyiciObserver eyleyici = new Eyleyici();
+    ISicaklikAlgilayici sicaklikAlgilayici = new SicaklikAlgilayici();
+    IEyleyici eyleyici = new Eyleyici();
     @Override
     public boolean arayuzeGiris() {
         return arayuz.kullaniciGiris();

@@ -1,6 +1,6 @@
 package program.isbirimleri;
 
-public interface ISicaklikAlgilayiciObserver {
+public interface ISicaklikAlgilayici {
     public int sicaklikOku();
     public int sicaklikGonder();
 }

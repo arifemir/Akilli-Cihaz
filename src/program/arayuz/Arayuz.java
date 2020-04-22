@@ -1,14 +1,15 @@
 package program.arayuz;
 
-import program.isbirimleri.IEyleyiciObserver;
-import program.isbirimleri.ISicaklikAlgilayiciObserver;
+import program.isbirimleri.IEyleyici;
+import program.isbirimleri.ISicaklikAlgilayici;
+import program.observer.IObserver;
 import veritabani.IKullaniciVeriTabaniServisi;
 import veritabani.postgreSQL.KullaniciPostgreSQLSurucusu;
 
 
 import java.util.Scanner;
 
-public class Arayuz implements IArayuzSubject {
+public class Arayuz implements IArayuzSubject , IObserver {
     Scanner input = new Scanner(System.in);
 
     @Override
@@ -49,23 +50,28 @@ public class Arayuz implements IArayuzSubject {
     }
 
     @Override
-    public void sicaklik(ISicaklikAlgilayiciObserver observer) {
-        observer.sicaklikGonder();
+    public void sicaklik(ISicaklikAlgilayici sicaklikAlgilayici) {
+        sicaklikAlgilayici.sicaklikGonder();
     }
 
     @Override
-    public void sogutucuAc(IEyleyiciObserver observer) {
-        observer.sogutucuAc();
+    public void sogutucuAc(IEyleyici eyleyici) {
+        eyleyici.sogutucuAc();
     }
 
     @Override
-    public void sogutucuKapat(IEyleyiciObserver observer) {
-        observer.sogutucuKapat();
+    public void sogutucuKapat(IEyleyici eyleyici) {
+        eyleyici.sogutucuKapat();
     }
 
 
     @Override
     public void Cikis() {
         System.out.println("Arayüzden çıkış yapılıyor...");
+    }
+
+    @Override
+    public void guncelle(int sicaklik) {
+        System.out.println("Sicaklik degisimi guncellendi");
     }
 }

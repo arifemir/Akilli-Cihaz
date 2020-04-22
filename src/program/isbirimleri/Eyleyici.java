@@ -1,6 +1,6 @@
 package program.isbirimleri;
 //subject
-public class Eyleyici implements IEyleyiciObserver {
+public class Eyleyici implements IEyleyici {
     @Override
     public void sogutucuAc() {
         System.out.println("Soğutucu Açılıyor...");
